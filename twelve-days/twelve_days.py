@@ -10,6 +10,5 @@ def recite(start_verse, end_verse):
     return [verse(n) for n in range(start_verse-1, end_verse)]
 
 def verse(idx):
-    return template.format(days[idx],
-        ', '.join(gifts[12-idx-1:-1] + [('and ' if idx else '') + gifts[-1]]))
+    return template.format(days[idx], ', '.join(gifts[12-idx-1:])).replace(', a', ', and a')
 
